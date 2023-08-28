@@ -5,7 +5,7 @@ import './Header.css'
 export function Header() {
   return(
     <>
-      <h1>Header</h1>
+      <h1>🏝️ Far Away 🧳</h1>
     </>
   )
 }
