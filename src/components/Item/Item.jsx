@@ -5,7 +5,7 @@ export function Item({ item }) {
         <span style= { item.packed? {textDecorationLine: "line-through"} : {}}>
           {item.quantity} {item.description}
         </span>
-        <button>❌</button>
+        <button>❌ </button>
       </li>
     </>
   );
