@@ -1,25 +1,27 @@
 import { useState } from "react";
 
-export function Form() {
+export function Form({onAddNewItem}) {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
+  
 
+  // Funtion to ADD New Items
   function handleSubmit(event) {
     event.preventDefault();
 
     const newItemData = {
       quantity,
       description,
-      packed: false,
+      packed: false,  
       id: Date.now(),
     };
 
-    console.log(newItemData)
-
-
+  onAddNewItem(newItemData)
     setDescription("");
-    setQuantity(1)
+    setQuantity(1);
   }
+
+
   function setNewItemHandler(event) {
     setDescription(event.target.value);
   }
@@ -27,7 +29,7 @@ export function Form() {
   function setNewQuantityHandler(event) {
     setQuantity(Number(event.target.value));
   }
-  
+
   return (
     <>
       <form className="add-form" onSubmit={handleSubmit}>
