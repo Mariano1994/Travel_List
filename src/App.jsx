@@ -13,13 +13,18 @@ export function App() {
     setItems(items => [...items, item] )
   }
 
+  function handleDeleteItem(id) {
+    setItems(items => items.filter(item => item.id !== id))
+
+  }
+
   return (
     <>
       <div className="app">
         <Header />
         <Form onAddNewItem={handlerAddNewItem}/>
-        <PackingList item={items} />
-        <Footer/>
+        <PackingList items={items} onDeleteItems={handleDeleteItem}/>
+        <Footer items={items}/>
       </div>
     </>
   );

@@ -1,9 +1,8 @@
 import { useState } from "react";
 
-export function Form({onAddNewItem}) {
+export function Form({ onAddNewItem }) {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
-  
 
   // Funtion to ADD New Items
   function handleSubmit(event) {
@@ -12,17 +11,15 @@ export function Form({onAddNewItem}) {
     const newItemData = {
       quantity,
       description,
-      packed: false,  
+      packed: false,
       id: Date.now(),
     };
 
-  onAddNewItem(newItemData)
+    onAddNewItem(newItemData);
 
     setDescription("");
     setQuantity(1);
-    
   }
-
 
   function setNewItemHandler(event) {
     setDescription(event.target.value);

@@ -1,14 +1,14 @@
 import { Item } from "../Item/Item";
 
-
-export function PackingList({item}) {
-
+export function PackingList({ items, onDeleteItems }) {
   return (
     <>
       <div className="list">
         <ul>
-          {item.map((item) => {
-            return <Item item={item} key={item.id} />;
+          {items.map((item) => {
+            return (
+              <Item item={item} key={item.id} onDeleteItems={onDeleteItems} />
+            );
           })}
         </ul>
       </div>

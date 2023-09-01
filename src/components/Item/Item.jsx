@@ -1,11 +1,11 @@
-export function Item({ item }) {
+export function Item({ item, onDeleteItems }) {
   return (
     <>
       <li>
-        <span style= { item.packed? {textDecorationLine: "line-through"} : {}}>
+        <span style={item.packed ? { textDecorationLine: "line-through" } : {}}>
           {item.quantity} {item.description}
         </span>
-        <button>❌ </button>
+        <button onClick={() => onDeleteItems(item.id)}>❌ </button>
       </li>
     </>
   );
