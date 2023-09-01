@@ -1,15 +1,29 @@
-
-export function Footer({items}){
+export function Footer({ items }) {
 
   
-  const numItems = items.length;
-  const numPackedItems = items.filter(item => item.packed === true).length
+  if (!items.length)
+    return (
+      <p className="stats">
+        <em> Start adding some items into your packing list 🚀 </em>
+      </p>
+    );
 
-  return(
+  const numItems = items.length;
+  const numPackedItems = items.filter((item) => item.packed === true).length;
+  const percentage = Math.round((numPackedItems / numItems) * 100);
+
+  return (
     <>
       <footer className="stats">
-        <em> 💼 You have {numItems} items on your list, and you already packed {numPackedItems}, ({Math.round(numPackedItems / numItems *100)}%)</em>
+        {percentage === 100 ? (
+          <em>You got everything! Ready to go ✈️</em>
+        ) : (
+          <em>
+            💼 You have {numItems} items in the list, and you already packed{" "}
+            {numPackedItems}, {percentage}%{" "}
+          </em>
+        )}
       </footer>
     </>
-  )
+  );
 }
