@@ -1,5 +1,7 @@
 
 export function Footer({items}){
+
+  console.log(items);
   return(
     <>
       <footer className="stats">
