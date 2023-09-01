@@ -17,8 +17,10 @@ export function Form({onAddNewItem}) {
     };
 
   onAddNewItem(newItemData)
+
     setDescription("");
     setQuantity(1);
+    
   }
 
 
