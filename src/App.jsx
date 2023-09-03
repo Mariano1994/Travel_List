@@ -14,7 +14,6 @@ export function App() {
   function handleDeleteItem(id) {
     setItems((items) => items.filter((item) => item.id !== id));
   }
-
   function handleToggleItem(id) {
     setItems((items) =>
       items.map((item) =>
@@ -28,6 +27,13 @@ export function App() {
     );
   }
 
+  function handleClearList() {
+    if(items.length === 0) return;
+
+    const confirm = window.confirm("Are you sure you want to delete all items?")
+    if(confirm)setItems([])
+  }
+
   return (
     <>
       <div className="app">
@@ -37,6 +43,7 @@ export function App() {
           items={items}
           onDeleteItems={handleDeleteItem}
           onPackItem={handleToggleItem}
+          onResetItems={handleClearList}
         />
         <Footer items={items} />
       </div>
