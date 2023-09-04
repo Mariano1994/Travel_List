@@ -43,7 +43,7 @@ export function App() {
           items={items}
           onDeleteItems={handleDeleteItem}
           onPackItem={handleToggleItem}
-          onResetItems={handleClearList}
+          onResetItemsList={handleClearList}
         />
         <Footer items={items} />
       </div>
