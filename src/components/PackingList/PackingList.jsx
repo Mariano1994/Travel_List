@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Item } from "../Item/Item";
 
+
 export function PackingList({ items, onDeleteItems, onPackItem, onResetItemsList}) {
   const [sortBy, setSortBy] = useState("input");
 
@@ -20,10 +21,6 @@ export function PackingList({ items, onDeleteItems, onPackItem, onResetItemsList
   function handelSelectSortOption(event) {
     setSortBy(event.target.value);
   }
-
-  // function handleCleanList() {
-  //   setSortBy([])
-  // }
 
   return (
     <>
